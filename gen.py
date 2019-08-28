@@ -3,15 +3,19 @@
 import sys
 import yaml
 import pathlib
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('input', help='.yml file with announcement parameters')
+parser.add_argument('command', nargs='?', help="'send' to actually send out, otherwise test run")
+parser.add_argument('-s', nargs='?', dest='subject_prefix', help='Prefix for the subject line, e.g., "Reminder: "')
+
+args = parser.parse_args()
 
 template = open("template.html").read()
 subject = open("subject.txt").read()
 
-if len(sys.argv) < 2:
-    sys.stderr.write("Usage: ./gen.py <input>.yml\n")
-    exit(1)
-
-yml = pathlib.Path(sys.argv[1])
+yml = pathlib.Path(args.input)
 
 with yml.open() as f:
     info = yaml.load(f, yaml.SafeLoader)
@@ -33,12 +37,13 @@ class Args:
     html = [outname]
     image = ['fiu-logo.png', info['image']]
     addresses = ['emails.csv']
-    subject = [subject]
+    subject = ["%s%s" % (args.subject_prefix, subject)]
     txt = ''
 
 mailer = pymailer.PyMailer(Args())
 
-if len(sys.argv) > 2 and sys.argv[2] == "send":
-    mailer.send()
+if args.command == "send":
+    # mailer.send()
+    pass
 else:
     mailer.send_test()

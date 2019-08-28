@@ -135,7 +135,7 @@ class PyMailer():
             csv_path = self.csv_path
 
         try:
-            csv_file = open(csv_path, 'r+t', encoding='utf-8')
+            csv_file = open(csv_path, 'r+t') # , encoding='utf-8'
         except IOError:
             raise IOError("Invalid or missing csv file path.")
 
