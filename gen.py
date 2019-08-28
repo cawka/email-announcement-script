@@ -43,7 +43,6 @@ class Args:
 mailer = pymailer.PyMailer(Args())
 
 if args.command == "send":
-    # mailer.send()
-    pass
+    mailer.send()
 else:
     mailer.send_test()
