@@ -28,7 +28,7 @@ for key in info:
     subject = subject.replace("@@%s@@" % key.upper(), info[key])
 
 outname = yml.parts[len(yml.parts)-1].replace('.yml', '.html')
-out = open(outname, "wt")
+out = open(outname, "wt", encoding="utf-8")
 out.write(template)
 out.close()
 
