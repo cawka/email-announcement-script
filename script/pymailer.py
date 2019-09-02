@@ -12,9 +12,11 @@ from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
+from email.mime.nonmultipart import MIMENonMultipart
+from email import encoders
 from time import sleep
 
-import config # Our file config.py
+from . import config # Our file config.py
 
 # setup logging to specified log file
 logging.basicConfig(level=logging.DEBUG)
@@ -32,6 +34,7 @@ class PyMailer():
         self.csv_path                = args.addresses[0]
         self.subject                 = args.subject[0]
         self.images                  = args.image
+        self.attachments             = args.attach
         self.from_name               = kwargs.get('from_name', config.FROM_NAME)
         self.from_email              = kwargs.get('to_name', config.FROM_EMAIL)
         self.nb_emails_per_recipient = kwargs.get('nb_emails_per_recipient', config.NB_EMAILS_PER_RECIPIENT)
@@ -83,7 +86,7 @@ class PyMailer():
         Open, parse and substitute placeholders with recipient data.
         """
         try:
-            file = open(template, 'rt') #, encoding='utf-8'
+            file = open(template, 'rt', encoding='utf-8')
         except IOError:
             raise IOError("Invalid or missing html file path.")
 
@@ -109,16 +112,29 @@ class PyMailer():
         email_message.preamble = 'This is a multi-part message in MIME format.'
 
         if self.txt_path != "":
-            email_message.attach(MIMEText(PyMailer._prepare_text(self.txt_path, recipient_data), 'plain'))
+            txt = MIMEText(PyMailer._prepare_text(self.txt_path, recipient_data), 'plain', _charset='utf-8')
+            # encoders.encode_quopri(txt)
+            email_message.attach(txt)
 
         if self.html_path != "":
-            email_message.attach(MIMEText(PyMailer._prepare_text(self.html_path, recipient_data), 'html'))
+            html = MIMEText(PyMailer._prepare_text(self.html_path, recipient_data), 'html', _charset='utf-8')
+            # encoders.encode_quopri(html)
+            email_message.attach(html)
 
         for image in self.images:
             with open(image, 'rb') as f:
                 imageMime = MIMEImage(f.read())
             imageMime.add_header('Content-ID', '<%s>' % image)
             email_message.attach(imageMime)
+
+        for attachment in self.attachments:
+            with open(attachment[1], 'rb') as f:
+                attachmentMime = MIMENonMultipart(attachment[0].split('/')[0], attachment[0].split('/')[1])
+                attachmentMime.set_payload(f.read())
+                if attachment[0].split('/')[0] == 'text':
+                    encoders.encode_quopri(attachmentMime)
+                attachmentMime.add_header('Content-Disposition', 'attachment; filename=%s' % attachment[1])
+                email_message.attach(attachmentMime)
 
         email_message['From'] = recipient_data.get('sender')
         email_message['To'] = recipient_data.get('recipient')
@@ -135,7 +151,7 @@ class PyMailer():
             csv_path = self.csv_path
 
         try:
-            csv_file = open(csv_path, 'r+t') # , encoding='utf-8'
+            csv_file = open(csv_path, 'r+t', encoding='utf-8')
         except IOError:
             raise IOError("Invalid or missing csv file path.")
 
