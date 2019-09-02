@@ -8,11 +8,12 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('input', help='.yml file with announcement parameters')
 parser.add_argument('command', nargs='?', help="'send' to actually send out, otherwise test run")
-parser.add_argument('-s', nargs='?', dest='subject_prefix', help='Prefix for the subject line, e.g., "Reminder: "')
+parser.add_argument('-s', nargs='?', default="", dest='subject_prefix', help='Prefix for the subject line, e.g., "Reminder: "')
+parser.add_argument('-t', dest='template', default='template.html', help='HTML template for the email')
 
 args = parser.parse_args()
 
-template = open("template.html").read()
+template = open(args.template).read()
 subject = open("subject.txt").read()
 
 yml = pathlib.Path(args.input)
