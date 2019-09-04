@@ -18,18 +18,18 @@ fi
 
 # schedule only on Saturday/Sunday; for the next week
 if ((day > 5)); then
-  echo "(cd \"$DIR\"; ./gen.py $@ -s "WILL SPAM SOON: ")" | at 1pm Monday
+  echo "(cd \"$DIR\"; ./gen.py $@ -s 'WILL SPAM SOON: ')" | at 1pm Monday
   echo "(cd \"$DIR\"; ./gen.py $@ send)" | at 2pm Monday
 fi
 
 if ((day > 5 || day < 3)); then
-  echo "(cd \"$DIR\"; ./gen.py -s "WILL SPAM SOON: " $@)" | at 9am Wednesday
-  echo "(cd \"$DIR\"; ./gen.py -s "Reminder: " $@ send)" | at 10am Wednesday
+  echo "(cd \"$DIR\"; ./gen.py -s 'WILL SPAM SOON: ' $@)" | at 9am Wednesday
+  echo "(cd \"$DIR\"; ./gen.py -s 'Reminder: ' $@ send)" | at 10am Wednesday
 fi
 
 if ((day != 5)); then
-  echo "(cd \"$DIR\"; ./gen.py -s "WILL SPAM SOON: " $@)" | at 9am Friday
-  echo "(cd \"$DIR\"; ./gen.py -s "Reminder: " $@ send)" | at 10am Friday
-  echo "(cd \"$DIR\"; ./gen.py -s "STARTING NOW: " $@ send)" | at 1:55pm Friday
+  echo "(cd \"$DIR\"; ./gen.py -s 'WILL SPAM SOON: ' $@)" | at 9am Friday
+  echo "(cd \"$DIR\"; ./gen.py -s 'Reminder: ' $@ send)" | at 10am Friday
+  echo "(cd \"$DIR\"; ./gen.py -s 'STARTING NOW: ' $@ send)" | at 1:55pm Friday
 fi
 
