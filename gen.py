@@ -24,6 +24,9 @@ with yml.open(encoding='utf-8') as f:
     info = yaml.load(f, yaml.SafeLoader)
 
 for key in info:
+    info[key] = info[key].replace("\n", "\n<p style='margin-top: 0.4em'>")
+
+for key in info:
     template = template.replace("@@%s@@" % key.upper(), info[key])
     subject = subject.replace("@@%s@@" % key.upper(), info[key])
 
