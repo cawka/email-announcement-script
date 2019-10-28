@@ -1,0 +1,15 @@
+series: "Invited Lecture Series"
+name: First Last
+host: First Last
+title: "Professor"
+affiliation: "University"
+topic: "Topic title"
+abstract: |
+        Long abstract
+bio: |
+        Log bio
+date: Friday, Month Day, 2019
+time: 2:00pm-3:00pm
+room: CASA 241
+image: images/image.jpg
+
