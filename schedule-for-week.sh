@@ -2,8 +2,6 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-day=$(date +"%u")
-
 ((!$#)) && echo No arguments supplied! && exit 1
 
 echo "Will schedule the following command (test before running):"
@@ -16,20 +14,24 @@ if [ $hastested != "y" ]; then
   exit 1
 fi
 
+MONDAY=${MONDAY:-Monday}
+WEDNESDAY=${WEDNESDAY:-Wednesday}
+FRIDAY=${FRIDAY:-Friday}
+
 # schedule only on Saturday/Sunday; for the next week
-if ((day > 5)); then
-  echo "(cd \"$DIR\"; ./gen.py $@ -s 'WILL SPAM SOON: ')" | at 1pm Monday
-  echo "(cd \"$DIR\"; ./gen.py $@ send)" | at 2pm Monday
+if [[ ! -v no_monday ]]; then 
+  echo "(cd \"$DIR\"; ./gen.py $@ -s 'WILL SPAM SOON: ')" | at 1pm $MONDAY
+  echo "(cd \"$DIR\"; ./gen.py $@ send)" | at 2pm $MONDAY
 fi
 
-if ((day > 5 || day < 3)); then
-  echo "(cd \"$DIR\"; ./gen.py -s 'WILL SPAM SOON: ' $@)" | at 9am Wednesday
-  echo "(cd \"$DIR\"; ./gen.py -s 'Reminder: ' $@ send)" | at 10am Wednesday
+if [[ ! -v no_wednesday ]]; then
+  echo "(cd \"$DIR\"; ./gen.py -s 'WILL SPAM SOON: ' $@)" | at 9am $WEDNESDAY
+  echo "(cd \"$DIR\"; ./gen.py -s 'Reminder: ' $@ send)" | at 10am $WEDNESDAY
 fi
 
-if ((day != 5)); then
-  echo "(cd \"$DIR\"; ./gen.py -s 'WILL SPAM SOON: ' $@)" | at 9am Friday
-  echo "(cd \"$DIR\"; ./gen.py -s 'Reminder: ' $@ send)" | at 10am Friday
-  echo "(cd \"$DIR\"; ./gen.py -s 'STARTING NOW: ' $@ send)" | at 1:55pm Friday
+if [[ ! -v no_friday ]]; then
+  echo "(cd \"$DIR\"; ./gen.py -s 'WILL SPAM SOON: ' $@)" | at 9am $FRIDAY
+  echo "(cd \"$DIR\"; ./gen.py -s 'Reminder: ' $@ send)" | at 10am $FRIDAY
+  echo "(cd \"$DIR\"; ./gen.py -s 'STARTING NOW: ' $@ send)" | at 1:57pm $FRIDAY
 fi
 
