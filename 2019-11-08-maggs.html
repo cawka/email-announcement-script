@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title></title>
+    <style type="text/css">
+     header { margin: 0.0px 0.0px 0.0px 0.0px; color: #525252; -webkit-text-stroke: #525252; }
+     table.title { background-color: #f9f9f9; font: 12.0px Helvetica; color: #525252; -webkit-text-stroke: #525252;}
+
+     h1 {text-align: center; font: 24.0px Geneva; color: #181818; -webkit-text-stroke: #000000;}
+     .title p { font: 16.0px Geneva; margin: 0; paddding: 0; text-align: center; }
+     .title p.name { font: 20.0px Geneva; font-weight: bold; margin: 0; paddding: 0; text-align: center; }
+     
+     h2 { text-align: center; font: 28.0px Helvetica; -webkit-text-stroke: #000000; min-height: 34.0px; }
+
+     div.body { margin: 18px; }
+     div.body p { font: 16px Geneva; text-align: center; margin: 0; paddding: 0; }
+
+     .abstract { margin: 18px; border-style: solid; border-width: 2px; border-color: #0; border-collapse: collapse; padding: 9px; }
+     .abstract p { margin: 0; font: 14px Geneva; }
+     .abstract h3 { margin: 0; text-align: center; font: 16px Geneva; font-weight: bold; }
+     
+     .bio { margin: 18px; padding: 0px 9px 0px 9px; }
+     .bio p { margin: 0; font: 14px Geneva; }
+     .bio h3 { margin: 0;  text-align: center; font: 16px Geneva; font-weight: bold; }
+
+     header, footer { margin: 0px; padding: 2px 9px 2px 9px; background-color: #f9f9f9; font: 12.0px Helvetica; color: #525252; -webkit-text-stroke: #525252; }
+
+     .logo { margin: 0px; padding: 0px 9px 0px 9px; text-align: center; background-color: #0a2648; }
+     p.logo { text-align: center; margin: 0; paddding: 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>FIU SCIS's Invited Lecture Series presents Bruce Maggs speaking on the topic of "The Web PKI in Theory and Malpractice", Friday, November 8, 2019, 2:00pm-3:00pm, at CASE 241.</p>
+    </header>
+
+     <div class="logo">
+      <center>
+        <table border="0" cellspacing="0" width="100%"><tr><td>
+          <p style="margin:0; padding:0" class="logo"><img src="cid:fiu-logo.png" alt="School of Computing and Information Sciences, Florida International University" /></p>
+        </td></tr>
+        </table>
+      </center>
+    </div>
+
+    <div class="title">
+      <h1>Invited Lecture Series</h1>
+
+     <center>
+      <table border="0" cellspacing="0" width="30%"><tr><td width="250">
+        <p><img style="max-width:250px; margin:0; padding:0;" src="cid:images/2019-11-08-Bruce-Maggs.jpg"></p>
+      </td></tr>
+      </table>
+      </center>
+
+      <p class="name">Bruce Maggs</p>
+      <p>Pelham Wilder Professor of Computer Science / Vice President</p>
+      <p>Duke University / Akamai</p>
+
+      <h2>The Web PKI in Theory and Malpractice</h2>
+    </div>
+    
+    <div class="body">
+      <p>When: <b>Friday, November 8, 2019, 2:00pm-3:00pm</b></p>
+      <p>Where: <b>CASE 241</b></p>
+      <p>Host: Alex Afanasyev<p>
+    </div>
+
+    <div class="abstract">
+      <h3>Abstract:</h3>
+      <p>"The Public Key Infrastructure (PKI) for the web was designed to help thwart \"phishing\" attacks by providing a mechanism for browsers to authenticate web sites, and also to help prevent the disclosure of confidential information by enabling encrypted communications. For users to reap these benefits, however, the parties that implement and operate the PKI, including certificate authorities, web-site operators, and browser vendors, must each perform their roles properly. This talk focuses on one aspect of the PKI: certificate revocation. The security of a web site hinges on the ability of the site operator to keeps its private keys private. While most operators guard their keys carefully, on occasion software vulnerabilities such as the notorious Heartbleed Bug have put millions of keys at risk. If a web-site operator fears that its private key has been compromised, it should ask its certificate authority to revoke the corresponding certificate. Browsers, however, often do not fully check whether the certificates they receive have been revoked, and mobile browsers never check. There are a variety of reasons for not checking, but the most important are the amount of bandwidth required to download certificate revocation lists in advance, the latency of checking certificates on the fly, and the slow progress of upgrading every web server to support the newer certificate status stapling approach. This talk presents a new and much more efficient system, CRLite, for pushing the revocation status of every certificate to every browser.  CRLite leverages a recent development: although lists of revoked certificates were previously available, Google's Certificate Transparency project now also provides a log of all unrevoked certificates as well. With both lists in hand, a compact data structure called a filter cascade can be used to represent the status of every certificate with no false positives and no false negatives. CRLite requires a browser to download a 1.2MB filter cascade initially, and then a 40KB update (on average) every day. Our results demonstrate that complete revocation checking is within reach for all clients."
+<p style='margin-top: 0.4em'></p>
+    </div>
+
+    <div class="bio">
+      <h3>Bio:</h3>
+      <p>"Bruce Maggs received the S.B., S.M., and Ph.D. degrees in computer science from the Massachusetts Institute of Technology in 1985, 1986, and 1989, respectively. His advisor was Charles Leiserson. After spending a year as a Postdoctoral Associate at MIT, he worked as a Research Scientist at NEC Research Institute in Princeton from 1990 to 1993. In 1994, he moved to Carnegie Mellon, where he stayed until joining Duke University in 2009. While on a two-year leave-of-absence from Carnegie Mellon, Maggs helped to launch Akamai Technologies, serving as its first Vice President for Research and Development.   The work on CRLite received the 2017 IEEE Cybersecurity Innovation Award.  In 2018 Maggs was part of a large team that received the inaugural SIGCOMM Networking Systems Award for the Akamai CDN, and was named an ACM Fellow."
+<p style='margin-top: 0.4em'></p>
+    </div>
+
+    <footer>
+      <p>This event will be webcast live, and archived, at <a href="https://mediaweb.fiu.edu/Mediasite/Catalog/catalogs/scis-seminars">https://mediaweb.fiu.edu/Mediasite/Catalog/catalogs/scis-seminars</a>.</p>
+    </footer>
+
+    <!-- <div class="logo">
+         <center>
+         <table border="0" cellspacing="0" width="100%"><tr><td>
+         <p style="margin:0; padding:0" class="logo"><img src="cid:fiu-logo.png" alt="School of Computing and Information Sciences, Florida International University" /></p>
+         </td></tr>
+         </table>
+         </center>
+         </div> -->
+  </body>
+</html>
