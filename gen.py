@@ -6,6 +6,12 @@ import pathlib
 import argparse
 import ics
 
+from ics import Calendar, Event
+from datetime import datetime, timezone
+from dateutil import parser
+import pytz
+import uuid
+
 parser = argparse.ArgumentParser()
 parser.add_argument('input', help='.yml file with announcement parameters')
 parser.add_argument('command', nargs='?', help="'send' to actually send out, otherwise test run")
@@ -23,6 +29,12 @@ yml = pathlib.Path(args.input)
 with yml.open(encoding='utf-8') as f:
     info = yaml.load(f, yaml.SafeLoader)
 
+info = {k.lower(): v for k, v in info.items()}
+
+date = datetime.strptime(info['date'], "%B %d, %Y")
+info['date'] = date.strftime("%A, %B %d, %Y")
+info['image'] = info['photo']
+
 for key in info:
     info[key] = info[key].replace("\n", "\n<p style='margin-top: 0.4em'>")
 
@@ -36,12 +48,6 @@ out.write(template)
 out.close()
 
 starttime, stoptime = info['time'].split('-')
-
-from ics import Calendar, Event
-from datetime import datetime, timezone
-from dateutil import parser
-import pytz
-import uuid
 
 begin = datetime.strptime("%s %s" % (info['date'], starttime), "%A, %B %d, %Y %I:%M%p")
 end = datetime.strptime("%s %s" % (info['date'], stoptime), "%A, %B %d, %Y %I:%M%p")
