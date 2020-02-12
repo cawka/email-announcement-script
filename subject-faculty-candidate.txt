@@ -1,0 +1,1 @@
+Faculty Candidate Talk: @@NAME@@ on @@DATE@@ at @@TIME@@ in @@ROOM@@

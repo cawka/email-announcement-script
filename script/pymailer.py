@@ -35,9 +35,9 @@ class PyMailer():
         self.subject                 = args.subject[0]
         self.images                  = args.image
         self.attachments             = args.attach
-        self.from_name               = kwargs.get('from_name', config.FROM_NAME)
-        self.from_email              = kwargs.get('to_name', config.FROM_EMAIL)
-        self.nb_emails_per_recipient = kwargs.get('nb_emails_per_recipient', config.NB_EMAILS_PER_RECIPIENT)
+        self.from_name               = getattr(args, 'from_name', config.FROM_NAME)
+        self.from_email              = getattr(args, 'from_email', config.FROM_EMAIL)
+        self.nb_emails_per_recipient = getattr(args, 'nb_emails_per_recipient', config.NB_EMAILS_PER_RECIPIENT)
 
     def _stats(self, message):
         pass
@@ -266,6 +266,9 @@ parser.add_argument('html',     metavar='html',    nargs=1, help='HTML template'
 parser.add_argument('--image',  action='append', help='Image files to embed, refered using cid:filename in HTML (can be repeated multiple times)')
 parser.add_argument('addresses', metavar='dest_csv',nargs=1, help='CSV containing names and addresses (<name>,<address)*')
 parser.add_argument('subject',  metavar='subject', nargs=1, help='Email subject')
+
+parser.add_argument('--from-name', help='Name part of the From: header')
+parser.add_argument('--from-email', help='Email part of the From: header')
 
 if __name__ == '__main__':
     args = parser.parse_args()

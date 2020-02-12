@@ -18,6 +18,9 @@ parser.add_argument('command', nargs='?', help="'send' to actually send out, oth
 parser.add_argument('-s', nargs='?', default="", dest='subject_prefix', help='Prefix for the subject line, e.g., "Reminder: "')
 parser.add_argument('--st', nargs='?', default="subject.txt", dest="subject_template", help='Subject template file')
 parser.add_argument('-t', dest='template', default='template.html', help='HTML template for the email')
+parser.add_argument('--from-name')
+parser.add_argument('--from-email')
+parser.add_argument('--emails')
 
 args = parser.parse_args()
 
@@ -87,7 +90,18 @@ class Args:
     txt = ''
     attach = [['text/calendar', 'ical-seminar-event.ics']]
 
-mailer = pymailer.PyMailer(Args())
+pymailer_args = Args()
+
+if args.from_name:
+    pymailer_args.from_name = args.from_name
+
+if args.from_email:
+    pymailer_args.from_email = args.from_email
+
+if args.emails:
+    pymailer_args.addresses = args.emails
+
+mailer = pymailer.PyMailer(pymailer_args)
 
 if args.command == "send":
     mailer.send()
