@@ -133,7 +133,7 @@ class PyMailer():
                 attachmentMime.set_payload(f.read())
                 if attachment[0].split('/')[0] == 'text':
                     encoders.encode_quopri(attachmentMime)
-                attachmentMime.add_header('Content-Disposition', 'attachment; filename=%s' % attachment[1])
+                attachmentMime.add_header('Content-Disposition', 'attachment; filename=%s' % attachment[2])
                 email_message.attach(attachmentMime)
 
         email_message['From'] = recipient_data.get('sender')

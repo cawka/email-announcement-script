@@ -21,6 +21,8 @@ parser.add_argument('-t', dest='template', default='template.html', help='HTML t
 parser.add_argument('--from-name')
 parser.add_argument('--from-email')
 parser.add_argument('--emails')
+parser.add_argument('--ical', default='ical-template.ics')
+parser.add_argument('--info', default="")
 
 args = parser.parse_args()
 
@@ -65,18 +67,20 @@ calparams = {
     'last-modified': format(datetime.utcnow(), 'Z'),
     'room': info['room'],
     'subject': subject.split(" on ")[0],
-    'description': '',
+    'description': args.info,
     'begin': format(begin),
     'end': format(end),
     'uid': str(uuid.uuid1()).upper(),
     'uid1': str(uuid.uuid1()).upper(),
     }
-    
-with open('ical-template.ics', 'rt') as f:
+
+outf_ical = 'ical-seminar-event-%s.ics' % str(uuid.uuid1()).upper()
+
+with open(args.ical, 'rt') as f:
     ics = f.read()
     for key in calparams:
         ics = ics.replace("@@%s@@" % key.upper(), calparams[key])
-    with open('ical-seminar-event.ics', 'wt', newline='\r\n') as outf:
+    with open(outf_ical, 'wt', newline='\r\n') as outf:
         outf.write(ics)
 
 from script import pymailer
@@ -88,7 +92,7 @@ class Args:
     addresses = ['emails.csv']
     subject = ["%s%s" % (args.subject_prefix, subject)]
     txt = ''
-    attach = [['text/calendar', 'ical-seminar-event.ics']]
+    attach = [['text/calendar', outf_ical, 'ical-seminar-event.ics']]
 
 pymailer_args = Args()
 
