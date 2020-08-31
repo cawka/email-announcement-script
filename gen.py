@@ -38,11 +38,16 @@ info = {k.lower(): v for k, v in info.items()}
 
 date = datetime.strptime(info['date'], "%B %d, %Y")
 info['date'] = date.strftime("%A, %B %d, %Y")
-info['image'] = info['photo']
+info['image'] = "images/" + info['photo']
+
+infoOrig = {}
 
 for key in info:
+    infoOrig[key+"_orig"] = info[key].replace("\n", "\\n")
     info[key] = info[key].replace("\n", "\n<p style='margin-top: 0.4em'>")
 
+info = {**info, **infoOrig}
+    
 for key in info:
     template = template.replace("@@%s@@" % key.upper(), info[key])
     subject = subject.replace("@@%s@@" % key.upper(), info[key])
@@ -67,7 +72,7 @@ calparams = {
     'last-modified': format(datetime.utcnow(), 'Z'),
     'room': info['room'],
     'subject': subject.split(" on ")[0],
-    'description': args.info,
+    'description': '%s\\n\\nTitle: %s\\n\\nAbstract: %s\\n\\nBio: %s\\n%s' % (info['zoominfo_orig'], info['topic_orig'], info['abstract_orig'], info['bio_orig'], args.info),
     'begin': format(begin),
     'end': format(end),
     'uid': str(uuid.uuid1()).upper(),

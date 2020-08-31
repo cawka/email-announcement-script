@@ -15,7 +15,7 @@ config = {
   "spreadsheets" => [
     "13FOUi8SYodOFp9QWp6vxV8_eG_YLevmPLhj6ZS5F0Mo",
   ],
-  "tab" => "2019-2020 Schedule",
+  "tab" => "2020-2021 Schedule",
 }
 
 cacheDir = "info-gen"
@@ -39,16 +39,20 @@ begin
         begin
           list = []
           ws.list.each do |item|
-            guest = item.to_hash
-            next if guest['Name'].nil? or ['', '---'].include?(guest['Name'])
+            begin
+              guest = item.to_hash
+              next if guest['Name'].nil? or ['', '---'].include?(guest['Name'])
 
-            t = Time.parse(guest['Date'])
-            date = t.strftime("%Y-%m-%d")
-            name =  guest['Name'].split().map(&:downcase).join('-')
-            file = "#{cacheDir}/#{date}-#{name}.yml"
-            puts file
-            
-            File.write file, item.to_hash.to_yaml
+              t = Time.parse(guest['Date'])
+              date = t.strftime("%Y-%m-%d")
+              name =  guest['Name'].split().map(&:downcase).join('-')
+              file = "#{cacheDir}/#{date}-#{name}.yml"
+              puts file
+              
+              File.write file, item.to_hash.to_yaml
+            rescue
+              logger.warn "Issue with item: #{guest['Name']}"
+            end
           end
         # rescue
         #   logger.warn "Error processing worksheet: #{$!}"
