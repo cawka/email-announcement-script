@@ -70,9 +70,9 @@ calparams = {
     'dtstamp': format(datetime.utcnow(), 'Z'),
     'created': format(datetime.utcnow(), 'Z'),
     'last-modified': format(datetime.utcnow(), 'Z'),
-    'room': info['room'],
+    'room': info['zoomlink'],
     'subject': subject.split(" on ")[0],
-    'description': '%s\\n\\nTitle: %s\\n\\nAbstract: %s\\n\\nBio: %s\\n%s' % (info['zoominfo_orig'], info['topic_orig'], info['abstract_orig'], info['bio_orig'], args.info),
+    'description': '%s\\n%s\\n\\nTitle: %s\\n\\nAbstract: %s\\n\\nBio: %s\\n%s' % (info['zoomlink_orig'], info['zoominfo_orig'], info['topic_orig'], info['abstract_orig'], info['bio_orig'], args.info),
     'begin': format(begin),
     'end': format(end),
     'uid': str(uuid.uuid1()).upper(),
@@ -81,11 +81,11 @@ calparams = {
 
 outf_ical = 'ical-seminar-event-%s.ics' % str(uuid.uuid1()).upper()
 
-with open(args.ical, 'rt') as f:
+with open(args.ical, 'rt', encoding='utf-8') as f:
     ics = f.read()
     for key in calparams:
         ics = ics.replace("@@%s@@" % key.upper(), calparams[key])
-    with open(outf_ical, 'wt', newline='\r\n') as outf:
+    with open(outf_ical, 'wt', newline='\r\n', encoding='utf-8') as outf:
         outf.write(ics)
 
 from script import pymailer

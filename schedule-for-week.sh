@@ -20,8 +20,8 @@ FRIDAY=${FRIDAY:-Friday}
 
 # schedule only on Saturday/Sunday; for the next week
 if [[ ! -v no_monday ]]; then 
-  echo "(cd \"$DIR\"; ./gen.py $@ -s 'WILL SPAM SOON: ')" | at 1pm $MONDAY
-  echo "(cd \"$DIR\"; ./gen.py $@ send)" | at 2pm $MONDAY
+  echo "(cd \"$DIR\"; ./gen.py $@ -s 'WILL SPAM SOON: ')" | at 2:30pm $MONDAY
+  echo "(cd \"$DIR\"; ./gen.py $@ send)" | at 3pm $MONDAY
 fi
 
 if [[ ! -v no_wednesday ]]; then
