@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Custom Script
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:EDT
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:EST
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=America/New_York:20210122T150000
+UID:A55F44FE-5999-11EB-B962-3CFDFEAC1D35
+DTSTAMP:20210118T143000Z
+LOCATION:https://fiu.zoom.us/j/97615645408?pwd=VnJybXBUUFgyK1dNL0ZoWFRTd2ZUZz09
+DESCRIPTION:https://fiu.zoom.us/j/97615645408?pwd=VnJybXBUUFgyK1dNL0ZoWFRTd2ZUZz09\nMeeting ID: 976 1564 5408, Computer Passcode: S#e!mi%21 , Phone call Passcode: 592224389\n\nTitle: Chameleon: An Innovation Platform for Computer Science Research and Education \n\nAbstract: New research ideas require an instrument where they can be developed, tested – and shared. To support Computer Science research such an instrument has to provide access to a diversity of hardware configurations, support deployment at scale, and deep reconfigurability so that a wide range of experiments can be supported. It also has to provide mechanisms for sharing so that new results can multiply their value by triggering further innovation. Most importantly -- since science does not stand still – it requires constant adaptation to support an ever increasing range of experiments driven by emergent ideas and opportunities. \nThe NSF-funded deeply reconfigurable Chameleon testbed for Computer Science research and education (www.chameleoncloud.org) has been developed to provide all these capabilities. The testbed provides many thousands of cores and over 5PB of storage hosted at sites at the University of Chicago and the Texas Advanced Computing Center (TACC) connected by 100 Gbps network. The hardware includes a large homogenous partition to facilitate experiments at scale along with an investment in diversity consisting of a range of accelerators, storage hierarchy nodes with a mix of HDDs, SDDs, NVMe, and large RAM, high-bandwidth I/0 storage, SDN-enabled networking hardware, and fast interconnects. To support Computer Science experiments, ranging from operating system and networking research to machine learning, Chameleon provides a configuration system giving users full control of the software stack: provisioning of bare metal, reboot, power on/off and console access. To date, the testbed has supported 5,000+ users and 700+ research and education projects and has just been renewed for four more years of operation. \nThis talk will describe the goals, the design strategy, and the existing and future capabilities of the testbed, as well as some of the research and education projects our users are working on. I will also introduce the services and tools we created to support sharing of experiments, curricula, and other digitally expressed artifacts that allow science to be shared via active involvement and foster reproducibility. Finally, I will describe how Chameleon is adapting to support new research directions and hope to discuss how we can most effectively move to support future research together. \n\nBio: Kate Keahey is one of the pioneers of infrastructure cloud computing. She created the Nimbus project, recognized as the first open source Infrastructure-as-a-Service implementation, and continues to work on research aligning cloud computing concepts with the needs of scientific datacenters and applications. To facilitate such research for the community at large, Kate leads the Chameleon project, providing a deeply reconfigurable, large-scale, and open experimental platform for Computer Science research. To foster the recognition of contributions to science made by software projects, Kate co-founded and serves as co-Editor-in-Chief of the SoftwareX journal, a new format designed to publish software contributions. Kate is a Scientist at Argonne National Laboratory and a Senior Fellow at the Computation Institute at the University of Chicago.\n
+STATUS:CONFIRMED
+SEQUENCE:0
+SUMMARY:SCIS Seminar: Kate Keahey
+LAST-MODIFIED:20210118T143000Z
+DTSTART;TZID=America/New_York:20210122T140000
+CREATED:20210118T143000Z
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:A55F44FF-5999-11EB-B962-3CFDFEAC1D35
+UID:A55F44FF-5999-11EB-B962-3CFDFEAC1D35
+TRIGGER:-PT15M
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Basso
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+

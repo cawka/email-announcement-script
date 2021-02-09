@@ -23,7 +23,7 @@ parser.add_argument('--from-email')
 parser.add_argument('--emails')
 parser.add_argument('--ical', default='ical-template.ics')
 parser.add_argument('--info', default="")
-parser.add_argument('--image', nargs='+', type=str, default=["fiu-logo.png"])
+parser.add_argument('--image', nargs='+', type=str, default=[])
 
 args = parser.parse_args()
 
