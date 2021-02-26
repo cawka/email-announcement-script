@@ -1,1 +1,1 @@
-SCIS Seminar (Tenure/Promotion Talk): @@NAME@@ on @@DATE@@ at @@TIME@@ in @@ROOM@@
+KFSCIS Seminar (Tenure/Promotion Talk): @@NAME@@ on @@DATE@@ at @@TIME@@ in @@ROOM@@
