@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Custom Script
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:EDT
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:EST
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=America/New_York:20210215T150000
+UID:30F7C6B0-6FB8-11EB-B962-3CFDFEAC1D35
+DTSTAMP:20210215T180405Z
+LOCATION:https://fiu.zoom.us/j/3053484802?pwd=VDhKLzJIck0wK0xZMFVxQ2lSUmVvZz09
+DESCRIPTION:https://fiu.zoom.us/j/3053484802?pwd=VDhKLzJIck0wK0xZMFVxQ2lSUmVvZz09\nMeeting ID: 305 348 4802, Computer Passcode:  case349, Phone call Passcode: 5522441\n\nTitle: Human Protein Interactome: Discovery, Analysis, Translation, and Dissemination\n\nAbstract: Computer science is of immense value in solving problems related to biology of human health and diseases, with classical methods of algorithm-driven bioinformatics and modern data-driven approaches. In this talk, I present interesting problems in biological systems and my work in solving them using computational methods. As an engineer trained in ECE, and a scientist trained in CS, I have looked at the questions pertaining to molecular systems that biologists seek answers to by drawing parallels to problems addressed in language technologies and network analyses. We have studied n-gram language modeling to detect genetic signatures and repetitive regions, latent semantic analysis to identify transmembrane helices in proteins, and social network analysis to predict edges in the human protein interactome. These approaches have been translated to experimentally validated results of biomedical significance. Specifically, they led to the discovery of the protein that plays a crucial role in viral immunity, identified two drugs (which treat allergies and motion sickness) to be potentially repurposable for Schizophrenia and are under clinical trials, and identified network modules that point to the role of specific organelles in a complex disease called congenital heart disease.  My current research is on the discovery of molecular interactome, on prioritizing our computational predictions, and on effectively disseminating the results to suitable biologists. The talk will not assume any audience background in biology, and it would be made interesting to computer scientists as well as to biomedical scientists. \n\nBio: Madhavi Ganapathiraju received Ph.D. from Carnegie Mellon University School of Computer Science in Language and Information Technologies, M. Engg. from Indian Institute of Science in Electrical Communications Engineering, and B.Sc. from Delhi University.  She is Associate Professor at the Department of Biomedical Informatics of University of Pittsburgh School of Medicine and at the Intelligent Systems Program at School of Computing and Information. She is a Member of Cancer Biology Program of Hillman Cancer Institute. She is faculty of a number of interdisciplinary graduate programs related to CS, AI, and systems biology at Pitt and at Language Technologies Institute of Carnegie Mellon University. She received NIH/NIMH’s BRAINS award that funded a large part of her computational research in biomedical science that is making translational impact in neuropsychiatric diseases, developmental disorders, and cancer. Further details may be viewed at http://severus.dbmi.pitt.edu \n
+STATUS:CONFIRMED
+SEQUENCE:0
+SUMMARY:Faculty Candidate Talk: Madhavi K Ganapathiraju
+LAST-MODIFIED:20210215T180405Z
+DTSTART;TZID=America/New_York:20210215T140000
+CREATED:20210215T180405Z
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:30F7C6B1-6FB8-11EB-B962-3CFDFEAC1D35
+UID:30F7C6B1-6FB8-11EB-B962-3CFDFEAC1D35
+TRIGGER:-PT15M
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Basso
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+

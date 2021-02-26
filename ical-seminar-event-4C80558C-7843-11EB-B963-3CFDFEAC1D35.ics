@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Custom Script
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:EDT
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:EST
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=America/New_York:20210226T150000
+UID:4C80558A-7843-11EB-B963-3CFDFEAC1D35
+DTSTAMP:20210226T150000Z
+LOCATION:https://fiu.zoom.us/j/97615645408?pwd=VnJybXBUUFgyK1dNL0ZoWFRTd2ZUZz09
+DESCRIPTION:https://fiu.zoom.us/j/97615645408?pwd=VnJybXBUUFgyK1dNL0ZoWFRTd2ZUZz09\nMeeting ID: 976 1564 5408, Computer Passcode: S#e!mi%21 , Phone call Passcode: 592224389\n\nTitle: Enabling Web Attack Reconstruction\n\nAbstract: Many modern network security incidents originate from the Web. For instance, it is not uncommon for users to stumble upon a website that hosts malicious advertisements, which in turn may redirect to phishing sites or promote the installation of malicious software via social engineering attacks. In corporate networks, such attacks can have devastating consequences. For example, an initial web-driven malware infection may be used as a stepping stone for larger scale network intrusions and costly data breaches. When such high-profile incidents are discovered, often weeks or even months after the initial attack took place, a digital forensics team is typically called in to reconstruct the root causes of the incident, so that better network defenses and security policies can be developed. However, a forensic analyst may not be able to reconstruct the entire chain of events up to the initial web attack that is the true root cause of the network breach. This is because modern browsers lack the ability to produce detailed audit logs, and the information contained in the existing navigation history and browser cache is typically too sparse or short lived to allow for a detailed reconstruction of complex web attacks.\nIn this talk, I will present two in-browser audit logging systems, called ChromePic and JSgraph, that aim to fill this gap. Both ChromePic and JSgraph are designed to continuously record detailed events internal to the browser, to enable the reconstruction of a variety of web-based attacks, including social engineering attacks and web-driven malware downloads. I will also show that such detailed audit logs can be continuously and transparently recorded with acceptable impact on browser performance and usability, and provide evidence that the obtained audit logs can be preserved for long periods of time, thus allowing for a detailed post- mortem analysis of web-driven security incidents that occurred far back in the past.\n\nBio: Roberto Perdisci is Patty and D.R. Grimes Distinguished Professor in Computer Science at the University of Georgia, where he directs the UGA Institute for Cybersecurity and Privacy. He is also an Adjunct Associate Professor in the Georgia Tech School of Computer Science and a member of the Georgia Tech Institute for Information Security and Privacy. His research interests include network and web security, malware defense, security applications of AI, IoT security, and telephony security.\nProf. Perdisci is the recipient of a 2012 NSF CAREER Award, and of the 2015 UGA Fred C.  Davison Early Career Scholar Award. He has published over sixty peer-reviewed papers, many of which have appeared in the most selective computer security and systems conferences and journals. His research has been sponsored by grants from the National Science Foundation, the US Department of Homeland Security (DHS), DARPA, and an industry grant from Intel. His past research on malware download defenses was selected by DHS for the Technology Transition to Practice (TTP) program, and has been promoted at prestigious industry venues, including the RSA Conference.\n
+STATUS:CONFIRMED
+SEQUENCE:0
+SUMMARY:SCIS Seminar: Robertso Perdicsi
+LAST-MODIFIED:20210226T150000Z
+DTSTART;TZID=America/New_York:20210226T140000
+CREATED:20210226T150000Z
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:4C80558B-7843-11EB-B963-3CFDFEAC1D35
+UID:4C80558B-7843-11EB-B963-3CFDFEAC1D35
+TRIGGER:-PT15M
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Basso
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+

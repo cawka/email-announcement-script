@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Custom Script
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:EDT
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:EST
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=America/New_York:20210222T150000
+UID:A2C425A2-751E-11EB-B962-3CFDFEAC1D35
+DTSTAMP:20210222T150000Z
+LOCATION:https://fiu.zoom.us/j/3053484802?pwd=VDhKLzJIck0wK0xZMFVxQ2lSUmVvZz09
+DESCRIPTION:https://fiu.zoom.us/j/3053484802?pwd=VDhKLzJIck0wK0xZMFVxQ2lSUmVvZz09\nMeeting ID: 305 348 4802, Computer Passcode:  case349, Phone call Passcode: 5522441\n\nTitle: Can We Trust AI? Towards Practical Implementation and Theoretical Analysis in Trustworthy Machine Learning\n\nAbstract: Deep learning has achieved extraordinary performance in many application domains recently. It has been well accepted that DNNs are vulnerable to adversarial attacks, which raises concerns of DNNs in security-critical applications and may result in disastrous consequences. Adversarial attacks are usually implemented by generating adversarial examples, i.e., adding sophisticated perturbations onto benign examples, such that adversarial examples are classified by the DNN as target (wrong) labels instead of the correct labels of the benign examples. The adversarial machine learning aims to study this phenomenon and leverage it to build robust machine learning systems and explain DNNs. In this talk, I will present the mechanism of adversarial machine learning in both empirical and theoretical ways. Specifically, a uniform adversarial attack generation framework, structured attack (StrAttack) is introduced, which explores group sparsity in adversarial perturbations by sliding a mask through images aiming for extracting key spatial structures. Second, we discuss the feasibility of adversarial attacks in the physical world and introduce a convincing framework, Expectation over Transformation (EoT). Utilize EoT with Thin Plate Spline (TPS) transformation, we can generate  Adversarial T-shirts, a powerful physical adversarial patch for evading person detectors even if it could undergo non-rigid deformation due to a moving person’s pose changes. Third, we stand on the defense side and design the first adversarial training method based on Graph Neural Network. Finally, we introduce Linear relaxation-based perturbation analysis (LiRPA) for neural networks, which computes provable linear bounds of output neurons given a certain amount of input perturbation. LiRPA studies the adversarial example in a theoretical way and can guarantee the test accuracy of a model by given perturbation constraints. The generality, flexibility, efficiency and ease-of-use of our proposed framework facilitate the adoption of LiRPA based provable methods for other machine learning problems beyond robustness verification.\n\nBio: Kaidi Xu is a Ph.D. candidate at Northeastern University. His research mainly focuses on the robustness of machine learning, including adversarial attacks, formal robustness verification and certified defenses. Besides trustworthy machine learning, he also has broad research interests include model compression & acceleration and explainable AI. His research papers are published in various top conferences such as NeurIPS, ICML, ICLR, IJCAI, AAAI, CVPR, ECCV, ICCV, etc. He also received multiple student travel awards at top conferences and serves as a committee member or reviewer in different conferences and journals. Previously to Northeastern University, He obtained his M.S. and B.S. degrees from the Department of Computer Science at the University of Florida in 2017 and Sichuan University in 2015 respectively.\n
+STATUS:CONFIRMED
+SEQUENCE:0
+SUMMARY:Faculty Candidate Talk: Kaidi Xu
+LAST-MODIFIED:20210222T150000Z
+DTSTART;TZID=America/New_York:20210222T140000
+CREATED:20210222T150000Z
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:A2C425A3-751E-11EB-B962-3CFDFEAC1D35
+UID:A2C425A3-751E-11EB-B962-3CFDFEAC1D35
+TRIGGER:-PT15M
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Basso
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+

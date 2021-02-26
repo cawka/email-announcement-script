@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Custom Script
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:EDT
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:EST
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=America/New_York:20210225T150000
+UID:C06E2DA0-7771-11EB-B963-3CFDFEAC1D35
+DTSTAMP:20210225T140000Z
+LOCATION:https://fiu.zoom.us/j/3053484802?pwd=VDhKLzJIck0wK0xZMFVxQ2lSUmVvZz09
+DESCRIPTION:https://fiu.zoom.us/j/3053484802?pwd=VDhKLzJIck0wK0xZMFVxQ2lSUmVvZz09\nMeeting ID: 305 348 4802, Computer Passcode:  case349, Phone call Passcode: 5522441\n\nTitle: Cyber Physics of Computing Machines and Networks: A New Foundation of Data Science for Cybersecurity\n\nAbstract: There is fascination in how a 21st century computer has its own cyber physics, similar to how a 19th century heat engine has conventional physics. In this talk, I present and demonstrate cyber physics, and explain its strength in advancing both attacks and defenses. Cyber physics consists of physics-like mathematical rules that govern or otherwise predict the large-scale behavior of elements of computing, such as a computer processor, an operating system, and a large network. Cyber physics advances data science by contributing physics-like laws that give rise to deep relations between data. I describe physics/mathematical modeling that encodes the inner workings of a computing machine, with high fidelity and in ways that resemble physical matter such as gasses and fluids. These models discover cyber physics by working at the intersection of statistical physics and dynamical systems theory. I explain how I drive the discovery of cyber physics via i) empirical data that I obtain via operating system virtualization, network traffic collection, and hardware instrumentation, and ii) large numerical simulations of computing machines in a high-performance computing environment. In conclusion, I describe cybersecurity applications of cyber physics, including the detection of malicious implants in a computer processor and in the operating system's kernel.\n\nBio: Dr. Julian Rrushi is a tenure-track assistant professor of engineering at Oakland University, Michigan. He carries out research at the intersection of operating systems, computer architectures, data science and artificial intelligence to break new ground in cybersecurity. His research projects are supported by the U.S. Department of Defense, the U.S. Department of Energy, and industry. Prior to commencing his academic career, Dr. Rrushi was a vulnerability researcher with industry for several years. He received a B.S. in Computer Science, an M.S. in Information Technology, and a Ph.D. in Computer Science, all from the University of Milan. His Ph.D. work focused on detection of malware and exploits in cyber-physical systems. Dr. Rrushi is a recipient of the Young Faculty Award from DARPA, class of 2020, for research on the cyber physics of computing machines and networks.\n
+STATUS:CONFIRMED
+SEQUENCE:0
+SUMMARY:Faculty Candidate Talk: Julian Rrushi
+LAST-MODIFIED:20210225T140000Z
+DTSTART;TZID=America/New_York:20210225T140000
+CREATED:20210225T140000Z
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:C06E2DA1-7771-11EB-B963-3CFDFEAC1D35
+UID:C06E2DA1-7771-11EB-B963-3CFDFEAC1D35
+TRIGGER:-PT15M
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Basso
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+
