@@ -1,0 +1,24 @@
+"""
+Global config file. Change variable below as needed but ensure that the log and
+retry files have the correct permissions.
+"""
+
+# smtp settings
+SMTP_HOST     = 'smtp.server.com'
+SMTP_PORT     = '587'
+SMTP_USER     = 'username'
+SMTP_PASSWORD = 'password'
+ENCRYPT_MODE  = 'starttls' # Choose between 'none', 'ssl' and 'starttls'
+
+# the address and name the email comes from
+FROM_NAME = 'From Name'
+FROM_EMAIL = 'from.email@cs.fiu.edu'
+
+# The number of emails to send to each recipient
+NB_EMAILS_PER_RECIPIENT = 1
+
+# test recipients list
+TEST_RECIPIENTS = [
+    {'name': 'Alex', 'email': 'test.email@some.domain.com'},
+]
+
