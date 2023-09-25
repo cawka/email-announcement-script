@@ -1,0 +1,62 @@
+---
+Misc: ''
+Name: Ahmed Imteaj
+Date: April 27, 2022
+Series: Graduate Student Seminar
+Theme: ''
+Requirements: Being able to join zoom
+Time: 2:00pm-3:00pm
+Room: Zoom
+ZoomLink: https://fiu.zoom.us/j/95657687267?pwd=SldzYktjY2JCODFuL3hGM0VwQzU2dz09
+ZoomInfo: 'Meeting ID: 956 5768 7267 Passcode: QPRu2s'
+Status: ''
+'Announcement jobs on wolf (atq: anno, remind, alert)': ''
+Date Proposed: ''
+Poster Status: ''
+Event Webpage Status: ''
+Social Media Status: ''
+Graduate Student Round-table Session: ''
+Title: Distributed Machine Learning Algorithms for Resource-Constrained Heterogeneous
+  Internet-of-Things Environments
+Affiliation: Ph.D. Candidate, Solid Lab (Prof. Hadi Amini)
+Distinguished Speaker Plaudits: ''
+Host: Alex Afanasyev
+Topic: Distributed Machine Learning Algorithms for Resource-Constrained Heterogeneous
+  Internet-of-Things Environments
+Abstract: The ubiquitous nature of IoT devices causes huge data streams due to their
+  widespread applications. Storing and processing such vast amounts of data in a centralized
+  location is costly and time-consuming. To attain a better ML model under the conventional
+  centralized approach, the users may need to compromise their privacy by sharing
+  their private data with data centers. Federated Learning (FL) is emerging due to
+  its capabilities as a distributed machine learning training over a network of available
+  devices. Though FL has a unique way of generating a cumulative global model by learning
+  from the client's model parameters, it has distinctive challenges from conventional
+  distributed optimization, such as system heterogeneity and statistical heterogeneity,
+  particularly while applying FL in resource-constrained IoT environments. Due to
+  such heterogeneity, if we deploy the FL algorithms in an IoT environment (with potentially
+  several IoT agents that have limited local computing resources), then most of the
+  IoT devices may turn into stragglers, and consequently, the FL process may be hampered.
+  Besides, as the IoT devices are vulnerable and prone to attacks, they may generate
+  inappropriate models that may prolong the model convergence and exhaust the resources
+  of the participating FL devices. To address these challenges, my research focuses
+  on leveraging an effective FL model that can handle heterogeneous IoT devices tackling
+  the challenges that arise from systems heterogeneity, and statistical heterogeneity
+  such as straggler issues, large data across the networks, diverge model infusion,
+  or issues with dealing with global model aggregation.
+InfoLink: ''
+Bio: Ahmed Imteaj is currently a Ph.D. Candidate at the Knight Foundation School of
+  Computing and Information Sciences at Florida International University (FIU), working
+  with Professor M. Hadi Amini. His research interests span Federated Learning, Machine
+  Learning, Internet of Things (IoT), Artificial Intelligence, and Blockchain. Ahmed
+  received his B.Sc. degree in Computer Science and Engineering from CUET, Bangladesh,
+  and received his Master’s in Computer Science from FIU. During his Ph.D., Ahmed
+  mentored 8 undergraduate and graduate students and was actively involved in NSF
+  REU and RET programs. Ahmed published several papers in peer-reviewed journals and
+  at top IEEE/ACM conferences.
+Photo: Ahmed-Imteaj.jpg
+Speaker's Email: ''
+? 'Speaker''s Mobile #
+
+'
+: ''
+Speaker Contacted About Travel?: ''

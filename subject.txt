@@ -1,1 +1,1 @@
-KFSCIS Seminar: @@NAME@@ on @@DATE@@ at @@TIME@@ via Zoom
+KFSCIS Seminar: @@NAME@@ on @@DATE@@ at @@TIME@@

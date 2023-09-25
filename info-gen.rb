@@ -15,7 +15,7 @@ config = {
   "spreadsheets" => [
     "13FOUi8SYodOFp9QWp6vxV8_eG_YLevmPLhj6ZS5F0Mo",
   ],
-  "tab" => "2020-2021 Schedule",
+  "tab" => "22-23 Schedule",
 }
 
 cacheDir = "info-gen"

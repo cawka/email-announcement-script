@@ -20,9 +20,10 @@ parser.add_argument('--st', nargs='?', default="subject.txt", dest="subject_temp
 parser.add_argument('-t', dest='template', default='template.html', help='HTML template for the email')
 parser.add_argument('--from-name')
 parser.add_argument('--from-email')
-parser.add_argument('--emails')
+parser.add_argument('--emails', default="emails.csv")
 parser.add_argument('--ical', default='ical-template.ics')
 parser.add_argument('--info', default="")
+parser.add_argument('--logo', default="fiu-logo.png")
 
 args = parser.parse_args()
 
@@ -72,7 +73,7 @@ calparams = {
     'last-modified': format(datetime.utcnow(), 'Z'),
     'room': info['zoomlink'],
     'subject': subject.split(" on ")[0],
-    'description': '%s\\n%s\\n\\nTitle: %s\\n\\nAbstract: %s\\n\\nBio: %s\\n%s' % (info['zoomlink_orig'], info['zoominfo_orig'], info['topic_orig'], info['abstract_orig'], info['bio_orig'], args.info),
+    'description': '%s\\n%s\\n\\nTitle: %s\\n\\nAbstract: %s\\n\\nBio: %s\\n%s' % (info['zoomlink_orig'], info['zoominfo_orig'], info['title_orig'], info['abstract_orig'], info['bio_orig'], args.info),
     'begin': format(begin),
     'end': format(end),
     'uid': str(uuid.uuid1()).upper(),
@@ -93,8 +94,8 @@ from script import pymailer
 class Args:
     test = True
     html = [outname]
-    image = ['fiu-logo.png', info['image']]
-    addresses = ['emails.csv']
+    image = [args.logo, info['image']]
+    addresses = [args.emails]
     subject = ["%s%s" % (args.subject_prefix, subject)]
     txt = ''
     attach = [['text/calendar', outf_ical, 'ical-seminar-event.ics']]
@@ -108,7 +109,7 @@ if args.from_email:
     pymailer_args.from_email = args.from_email
 
 if args.emails:
-    pymailer_args.addresses = args.emails
+    pymailer_args.addresses = [args.emails]
 
 mailer = pymailer.PyMailer(pymailer_args)
 

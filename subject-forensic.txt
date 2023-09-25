@@ -1,1 +1,1 @@
-**NEW** KFSCIS Digital Forensics Talk: @@NAME@@ on @@DATE@@ at @@TIME@@ via Zoom
+KFSCIS Digital Forensics Talk: @@NAME@@ on @@DATE@@ at @@TIME@@ via Zoom
